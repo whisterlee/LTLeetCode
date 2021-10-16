@@ -104,12 +104,33 @@ class Solution {
 
 class Solution2 {
     func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
-        
+        var nums = nums
+        sortNums(&nums)
+        print("排序后: \(nums)")
+        return nums[nums.count - k]
+    }
+    
+    func sortNums(_ nums: inout [Int]) {
+        var sortedIndex: Int = 0
+        var i = nums.count - 2
+        var j = nums.count - 1
+        while sortedIndex < nums.count {
+            if nums[i] > nums[j] {
+                (nums[i], nums[j]) = (nums[j], nums[i])
+            }
+            i -= 1
+            j -= 1
+            if j <= sortedIndex {
+                sortedIndex += 1
+                i = nums.count - 2
+                j = nums.count - 1
+            }
+        }
     }
 }
 
-let nums = [3,2,1,5,6,4]
+let nums = [3,2,1,5,8,6,4,7]
 let k = 2
-let res = Solution().findKthLargest(nums, k)
+let res = Solution2().findKthLargest(nums, k)
 print("输入: nums = \(nums), k = \(k)")
 print("输出: \(res)")

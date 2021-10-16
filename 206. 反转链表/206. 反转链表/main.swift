@@ -66,11 +66,31 @@ class Solution1 {
         return last
     }
 }
+
+/// 循环翻转
+class Solution2 {
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var newHead: ListNode?
+        var cur = head
+        while cur != nil {
+            // 1 记录即将断开的节点
+            let tmp = cur?.next
+            // 2 翻转
+            cur?.next = newHead
+            // 3 重制
+            newHead = cur
+            cur = tmp
+        }
+        
+        return newHead
+    }
+}
+
 let arr = [1, 2, 3, 4, 5]
 let head = ListNode.buildListNode(with: arr)
 print("输入: \(head!)")
 
-let solution = Solution1()
+let solution = Solution2()
 var result = solution.reverseList(head)
 print("输出: \(result?.description ?? "NULL")")
 
