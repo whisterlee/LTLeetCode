@@ -86,7 +86,7 @@ class Solution1 {
 }
 
 var arr = [1,2,3,4,5]
-var head = ListNode.creatListNode(with: arr)
+var head = ListNode.buildListNode(with: arr)
 let k = 2
 print("输入: head = \(head!), k = \(k)")
 

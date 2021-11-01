@@ -62,11 +62,11 @@ class Solution {
                 /* 如果 sum > 0，则说明 sum 对结果有增益效果，则 sum 保留并加上当前遍历数字 8 */
                 sum += num
             }
-            
+
             /* 每次比较 sum 和 ans的大小，将最大值置为result，遍历结束返回结果 */
             res = max(sum, res)
         }
-        
+
         return res
     }
 }

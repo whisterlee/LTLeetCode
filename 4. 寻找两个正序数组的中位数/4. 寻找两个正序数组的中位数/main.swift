@@ -70,7 +70,7 @@ class Solution1 {
     }
 }
 
-// TODO: 二分查找
+/// 双数组二分查找
 class Solution2 {
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         return 0
